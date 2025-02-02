@@ -19,11 +19,11 @@ export default function Home() {
 
   // Array of hints
   const hints = [
-    "Hint 1: username sochhle",
+    "Hint 1: username sochhle dumbo its what i call youu",
     "Hint 2: The password is a special date.",
-    "Hint 3: The password is a 4-digit number.",
-    "Hint 4: The password represents a day and month.",
-    "Hint 5: Bhai call krle ",
+    "Hint 3: The password is a 4-digit number (mwahh?).",
+    "Hint 4: The password represents a day and month.(kissie)",
+    "Hint 5: Bhai call krle idiot ass cutuu ",
   ];
 
   const handleLogin = async (e: React.FormEvent) => {

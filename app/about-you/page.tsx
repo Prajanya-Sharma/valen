@@ -7,14 +7,14 @@ const AboutYouPage = () => {
 
   // Array of random text for the cards
   const cards = [
-    'You are the most amazing person I know. ❤️',
-    'Your smile brightens up my day. 🌟',
-    'I love how kind and caring you are. 💖',
-    'You make me a better person every day. 🌈',
-    'Your laughter is my favorite sound. 😊',
-    'I am so grateful to have you in my life. 🙏',
-    'You are my everything. 💕',
-    'I love you more than words can express. 🥰',
+    'Thank you meri jaan for being the mostamazing person I know. ❤️',
+    'Your smile makes me the happiest person its so eye-pleasing,It has my heart. 🌟',
+    'I love the way you care for me on even the smallest things cutuu. 💖',
+    'Your eyes i could watch forever they are so gorgeous so pretty so perfectt!!. 🌈',
+    'I love the way you giggle like an idiot(mwahh) on our silliest moments. 😊',
+    'I am so so grateful to have you in my life. ',
+    'these almost 2 and a half years have been the best everr i could have imagined. 💕',
+    'So will you pleaseee be my valentinee. 🥰',
   ];
 
   // Handle next card
