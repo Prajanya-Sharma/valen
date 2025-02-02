@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import CustomModal from '../components/CustomModal'; // Import the CustomModal
 
 export default function Home() {
   const [showForm, setShowForm] = useState(false);
@@ -12,6 +13,8 @@ export default function Home() {
   const [yesClicked, setYesClicked] = useState(false); // Track if "Yes" button has been clicked before
   const [noClicks, setNoClicks] = useState(0); // Track number of failed No clicks
   const [noPosition, setNoPosition] = useState({ x: 50, y: 50 }); // Start below Yes button
+  const [showModal, setShowModal] = useState(false); // Modal visibility state
+  const [modalMessage, setModalMessage] = useState(''); // Modal message
   const router = useRouter();
 
   // Array of hints
@@ -43,9 +46,10 @@ export default function Home() {
       setError(data.message || 'Try again 😢');
       setHintCount((prev) => prev + 1); // Increment hint count on failure
 
-      // If hint count reaches 5, show an alert
+      // If hint count reaches 5, show a custom modal
       if (hintCount + 1 >= 5) {
-        alert('Bhai call krle 😢');
+        setModalMessage('Bhai call krle 😢');
+        setShowModal(true);
       }
     }
   };
@@ -60,14 +64,16 @@ export default function Home() {
     setNoClicks((prev) => prev + 1);
 
     if (noClicks + 1 >= 7) {
-      alert('Hahah tujhe kya lga krlegi No click 😆 Chalo click Yes now!');
+      setModalMessage('Hahah tujhe kya lga krlegi No click 😆 Chalo click Yes now!');
+      setShowModal(true);
     }
   };
 
   // Handle "Yes" button click
   const handleYesClick = () => {
     if (!yesClicked) {
-      alert('Bhai no to click krke dekh');
+      setModalMessage('Bhai no to click krke dekh');
+      setShowModal(true);
       setYesClicked(true);
     } else {
       setShowForm(true);
@@ -114,6 +120,7 @@ export default function Home() {
             required
           />
           <button type="submit">Submit</button>
+          <div>now do some mehnattt!! cutu love</div>
           {error && <p className="error">{error}</p>}
 
           {/* Display hints */}
@@ -126,6 +133,20 @@ export default function Home() {
             </div>
           )}
         </form>
+      )}
+
+      {/* Show hearts animation if "Yes" clicked twice */}
+      {yesClicked && (
+        <div className="hearts-container">
+          {Array.from({ length: 30 }).map((_, index) => (
+            <span key={index} className="heart">❤️</span>
+          ))}
+        </div>
+      )}
+
+      {/* Show custom modal if needed */}
+      {showModal && (
+        <CustomModal message={modalMessage} onClose={() => setShowModal(false)} />
       )}
     </div>
   );

@@ -1,0 +1,32 @@
+/* /app/components/CustomModal.module.css */
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+  }
+  
+  .modalContent {
+    background-color: white;
+    opacity:0.5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+   color:black;
+  }
+  
+  .modalContent button {
+    padding: 10px;
+    background-color: #ff3b30;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

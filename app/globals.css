@@ -283,3 +283,71 @@ h1 {
 .carousel-button:hover {
   background-color: #e91e63;
 }
+
+/* Hearts animation styles */
+.hearts-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows clicking through hearts */
+  z-index: 1000; /* Make sure it's on top of other elements */
+}
+
+.heart {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.7;
+  animation: bounceHeart 3s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes bounceHeart {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-30px) scale(1.2);
+  }
+  50% {
+    transform: translateY(0) scale(1);
+  }
+  75% {
+    transform: translateY(-30px) scale(1.2);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Random position for each heart */
+.hearts-container .heart:nth-child(odd) {
+  animation-delay: 0s;
+}
+
+.hearts-container .heart:nth-child(even) {
+  animation-delay: 1s;
+}
+
+.hearts-container .heart {
+  animation-duration: 4s; /* Adjust the speed of the bounce */
+  left: calc(100% * var(--x));
+  top: calc(100% * var(--y));
+  animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.play-pause-button{
+  background-color: #ff4081;
+  color: white;
+  border:  black;
+  border-radius: 10%;
+  width: fit-content;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left:45%;
+}
